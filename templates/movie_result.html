@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="page-header">
+    {% for result in searchResult %}
+        <h1>{{ result.siteName }}共搜索到{{ result.count }}部电影。</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>电影名</th>
+                    <th>下载链接</th>
+                </tr>
+             </thead>
+             <tbody>
+                {% for movie in result.result %}
+                <tr>
+                    <td>{{ movie['name'] }}</td>
+                    <td>{% for URL in movie['downloadURL'] %}<a href={{ URL }}>{{ URL }}</a>    {% endfor %}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+         </table>
+    {% endfor %}
+</div>
+{% endblock %}
