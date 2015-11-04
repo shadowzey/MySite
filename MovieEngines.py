@@ -21,9 +21,6 @@ def taskThread(method, taskList, maxThread=6, **args):
             t.start()
         for t in threads:
             t.join()
- 
-
-
 
 class GaoqingMp4(object):
     def __init__(self, ):
@@ -83,18 +80,17 @@ class Dytt(object):
         downloadURLRegx = args['downloadURLRegx']
         movieTitleRegx = args['movieTitleRegx']
         infoHTML = urllib2.urlopen(infoURL).read()
-        try: infoDict['name'] = movieTitleRegx.findall(infoHTML)[0].decode('gb2312')
-        except UnicodeDecodeError,e: return
-        infoDict['downloadURL'] = [url.decode('gb2312') for url in downloadURLRegx.findall(infoHTML)]
+        infoDict['name'] = movieTitleRegx.findall(infoHTML)[0].decode('gbk', 'ignore')
+        infoDict['downloadURL'] = [url.decode('gbk') for url in downloadURLRegx.findall(infoHTML)]
         self.result.append(infoDict) 
 
     def search(self, keyword):
         self.keyword = keyword
-        searchURL = self.baseURL + quote(keyword.encode('gb2312'))
+        searchURL = self.baseURL + quote(keyword.encode('gbk'))
         sourceHTML = urllib2.urlopen(searchURL).read()
 
         movieURLRegx = re.compile(r'(?<=<td width=\'55%\'><b><a href=\')(/html/gndy/dyzz.*?|/html/tv/oumeitv.*?|/html/gndy/jddy.*?)\'>', re.S)
-        pageCountRegx = r'PageNo=(\d+?)\'>{}</a></td>'.format('末页'.encode('gb2312'))
+        pageCountRegx = r'PageNo=(\d+?)\'>{}</a></td>'.format('末页'.encode('gbk'))
         pageCount = re.findall(pageCountRegx, sourceHTML, re.S)
 
         if pageCount != []:
@@ -107,7 +103,7 @@ class Dytt(object):
         infoURLs = movieURLRegx.findall(sourceHTML) + self.pageInfoURLs
         infoURLs = ['http://www.ygdy8.com'+url for url in infoURLs]
         movieTitleRegx = re.compile(r'<div class="title_all"><h1><font color=#07519a>(.*?)</font>', re.S)
-        downloadURLRegx = re.compile(r'(?:"#fdfddf">|{}:<br />).*?<a href="(.*?)">'.format('下载地址'.encode('gb2312')), re.S)
+        downloadURLRegx = re.compile(r'(?:"#fdfddf">|{}:<br />).*?<a href="(.*?)">'.format('下载地址'.encode('gbk')), re.S)
         taskThread(self.movieInfoSearch, infoURLs, movieTitleRegx=movieTitleRegx, downloadURLRegx=downloadURLRegx)
         self.count = len(self.result)
  
