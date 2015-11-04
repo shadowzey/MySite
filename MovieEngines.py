@@ -103,7 +103,7 @@ class Dytt(object):
         infoURLs = movieURLRegx.findall(sourceHTML) + self.pageInfoURLs
         infoURLs = ['http://www.ygdy8.com'+url for url in infoURLs]
         movieTitleRegx = re.compile(r'<div class="title_all"><h1><font color=#07519a>(.*?)</font>', re.S)
-        downloadURLRegx = re.compile(r'(?:"#fdfddf">|{}:<br />).*?<a href="(.*?)">'.format('下载地址'.encode('gbk')), re.S)
+        downloadURLRegx = re.compile(r'(?:"#fdfddf">|{}:).*?<a href="(.*?)">'.format('下载地址'.encode('gbk')), re.S)
         taskThread(self.movieInfoSearch, infoURLs, movieTitleRegx=movieTitleRegx, downloadURLRegx=downloadURLRegx)
         self.count = len(self.result)
  
