@@ -42,7 +42,7 @@ class GaoqingMp4(object):
             infoDict = {}
             detailsURL = 'http://www.mp4ba.com/' + re.findall(r'href="(show.php.*?)"',movieInfo)[0]
             infoDict['name'] = ''.join(re.findall(r'target="_blank">(.*?)<span class="keyword">(.*?)</span>(.*?)</a>',movieInfo,re.S)[0]).replace('\r\n','').replace(' ','')
-            infoDict['downloadURL'] = self.getDownurl(detailsURL)
+            infoDict['downloadURL'] = (self.getDownurl(detailsURL))
             infoDict['fileSize'] = re.findall(r'<td>(.*[M|G]B?)</td>',movieInfo)[0]
             self.result.append(infoDict)
         self.count = len(self.result)
