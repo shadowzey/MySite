@@ -2,22 +2,22 @@
 
 {% block page_content %}
 <div class="page-header">
-    <h1>共搜索到{{ count }}部电影。</h1>
-        <table class="table">
+    <h1>共搜索到{{ count }}部电影:</h1>
+</div>
+<div class="table-responsive">
+        <table class="table table-striped">
             <thead>
-                <tr>
-                    <th width="50%">电影名</th>
-                    <th width="50%">下载链接</th>
-                </tr>
-             </thead>
-             <tbody>
+            <tr>
+                <th>电影名</th>
+                <th>下载链接</th>
+            </tr>
+            </thead>
              {% for result in searchResult %}
                 <tr>
-                    <td width="50%">{{ result.description }}</td>
-                    <td width="50%">{% for l in result.link %}<li>{{ l }}</li>{% endfor %}</td>
+                    <td nowrap="nowrap">{{ result.description }}</td>
+                    <td nowrap="nowrap">{% for l in result.link %}<li><a href={{ l }}>{{ l }}</a></li>{% endfor %}</td>
                 </tr>
              {% endfor %}
-              </tbody>
          </table>
 </div>
 {% endblock %}
