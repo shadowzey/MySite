@@ -1,2 +1,4 @@
 *.py[co]
 /venv
+config.ini
+/logs

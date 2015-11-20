@@ -2,7 +2,8 @@
 
 {% block page_content %}
 <div class="page-header">
-    <h1>“{{ keyword }}”共搜索到{{ searchCount }}部电影:</h1>
+{% if count %}
+    <h1>“{{ keyword }}”共搜索到{{ count }}部电影:</h1>
 </div>
 <div class="table-responsive">
         <table class="table table-striped">
@@ -20,4 +21,8 @@
              {% endfor %}
          </table>
 </div>
+{% else %}
+    <h2>啊哦，没有搜索到结果，<a href="{{ url_for('movie.search') }}">换个关键词试试？</a></h2>
+</div>
+{% endif %}
 {% endblock %}
