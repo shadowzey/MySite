@@ -1,0 +1,15 @@
+web:
+  build: .
+  ports:
+    - "5000:5000"
+  links:
+    - mysql:mysql
+  command: python /code/manage.py runserver --host 0.0.0.0
+
+mysql:
+  image: daocloud.io/mysql:latest
+  environment:
+    - MYSQL_DATABASE=moviedb
+    - MYSQL_ROOT_PASSWORD=12342234yanze
+  ports:
+    - "3306:3306"

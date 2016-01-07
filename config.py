@@ -1,5 +1,7 @@
 import os
+
 basedir = os.path.abspath(os.path.dirname(__file__))
+DATABASE_URL = 'mysql://root:{mysqlpassword}@{mysqlurl}:{mysqlport}/{database}'.format(mysqlpassword=os.environ.get('MYSQL_ENV_MYSQL_ROOT_PASSWORD'), mysqlurl=os.environ.get('MYSQL_PORT_3306_TCP_ADDR'), mysqlport=os.environ.get('MYSQL_PORT_3306_TCP_PORT'), database=os.environ.get('MYSQL_ENV_MYSQL_DATABASE'))
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'hard to guess string'
@@ -16,7 +18,7 @@ class DevelopmentConfig(Config):
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'mysql://admin:12342234yanze@174.1.40.2:3306/moviedb'
+    SQLALCHEMY_DATABASE_URI = DATABASE_URL
 
 config = {
     'development': DevelopmentConfig,
