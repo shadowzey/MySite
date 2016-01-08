@@ -7,7 +7,7 @@ web:
   command: python /code/manage.py runserver --host 0.0.0.0
 
 mysql:
-  image: daocloud.io/mysql:latest
+  build: mysql/
   environment:
     - MYSQL_DATABASE=moviedb
     - MYSQL_ROOT_PASSWORD=12342234yanze
