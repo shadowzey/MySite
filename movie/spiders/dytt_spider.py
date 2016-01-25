@@ -7,13 +7,13 @@ from ..items import MovieItem
 
 class DyttSpider(CrawlSpider):
     name = 'Dytt'
-    allowed_domains = ['ygdy8.net', 'ygdy8.com']
+    allowed_domains = ['dytt8.net', 'dytt8.com']
     start_urls = [
-        'http://www.ygdy8.net/html/gndy/china/index.html',
-        'http://www.ygdy8.net/html/gndy/rihan/index.html',
-        'http://www.ygdy8.net/html/gndy/oumei/index.html',
-        'http://www.ygdy8.net/html/gndy/dyzz/index.html',
-        'http://www.ygdy8.net/html/gndy/jddy/index.html',
+        'http://www.dytt8.net/html/gndy/china/index.html',
+        'http://www.dytt8.net/html/gndy/rihan/index.html',
+        'http://www.dytt8.net/html/gndy/oumei/index.html',
+        'http://www.dytt8.net/html/gndy/dyzz/index.html',
+        'http://www.dytt8.net/html/gndy/jddy/index.html',
     ]
 
     rules = (
