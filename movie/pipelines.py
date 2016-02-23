@@ -45,7 +45,7 @@ class MySQLStorePipeline(object):
     def _do_upinsert(self, conn, item, spider):
         linkmd5id = self._get_linkmd5id(item)
         #print linkmd5id
-        now = datetime.utcnow().replace(microsecond=0).isoformat(' ')
+        now = datetime.now().replace(microsecond=0).isoformat(' ')
         conn.execute("""
                 select 1 from movieinfo where linkmd5id = %s
         """, (linkmd5id, ))

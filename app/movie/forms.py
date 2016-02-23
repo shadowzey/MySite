@@ -8,5 +8,5 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 class SearchForm(Form):
-    movieName = StringField('电影名:', validators=[Required(), Length(min=2, max=20)])
+    movieName = StringField('电影名:', validators=[Required(), Length(min=1, max=20)])
     submit = SubmitField('搜索')
