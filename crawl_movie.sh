@@ -1,3 +1,3 @@
 scrapy crawl Dytt
 scrapy crawl LongBuLuo
-scrapy crawl Doubanx
+#scrapy crawl Doubanx
