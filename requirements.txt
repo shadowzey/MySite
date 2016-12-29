@@ -20,7 +20,6 @@ argparse==1.2.1
 blinker==1.4
 cffi==1.4.2
 colorama==0.2.5
-cryptography==1.1.2
 cssselect==0.9.1
 dominate==2.1.16
 enum34==1.1.2

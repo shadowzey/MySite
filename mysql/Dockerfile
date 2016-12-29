@@ -1,4 +1,4 @@
-FROM mysql:latest
+FROM daocloud.io/mysql
 ADD my.cnf /etc/mysql/my.cnf
 ENTRYPOINT ["/entrypoint.sh"]
 

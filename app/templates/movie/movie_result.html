@@ -43,25 +43,6 @@
              {% endfor %}
          </table>
 </div>
-<h3>豆瓣X:</h3>
-<div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>电影名</th>
-                <th>下载链接</th>
-            </tr>
-            </thead>
-             {% for result in searchResult %}
-                {% if result.moviesite == '豆瓣X' %}
-                <tr>
-                    <td nowrap="nowrap">{{ result.description }}</td>
-                    <td nowrap="nowrap">{% for l in result.links %}<li><a href={{ l }}>{{ l }}</a></li>{% endfor %}</td>
-                </tr>
-             {% endif %}
-             {% endfor %}
-         </table>
-</div>
 {% else %}
     <h2>啊哦，“{{ keyword }}”没有搜索到结果，<a href="{{ url_for('movie.search') }}">换个关键词试试？</a></h2>
 </div>
