@@ -44,7 +44,8 @@ class LongbuluoSpider(CrawlSpider):
     ]
     
     rules = (
-        Rule(LinkExtractor(allow=('www.lbldy.com/tag/.*/page/\d+/'), restrict_xpaths=('//div[@class="pagebar"]/a[last()]'))),
+        #Rule(LinkExtractor(allow=('www.lbldy.com/tag/.*/page/\d+/'), restrict_xpaths=('//div[@class="pagebar"]/a[last()]'))),
+        Rule(LinkExtractor(allow=('www.lbldy.com/tag/.*/page/\d+/'), restrict_xpaths=('//a[@class="next page-numbers"]'))),
         Rule(LinkExtractor(allow=('www.lbldy.com/(?:movie|television|dongman|video)/\d+\.html')), callback='parse_item')
     )
 
