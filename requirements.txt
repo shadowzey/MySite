@@ -14,7 +14,7 @@ SQLAlchemy==1.0.9
 Scrapy==1.0.3
 Twisted==15.5.0
 WTForms==2.0.2
-Werkzeug==0.11.2
+Werkzeug==0.15.3
 alembic==0.8.4
 argparse==1.2.1
 blinker==1.4
