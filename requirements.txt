@@ -29,7 +29,7 @@ idna==2.0
 inflect==0.2.5
 ipaddress==1.0.15
 itsdangerous==0.24
-lxml==3.5.0
+lxml==4.6.2
 pyOpenSSL==17.5.0
 pyasn1==0.1.9
 pycparser==2.14
