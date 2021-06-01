@@ -41,7 +41,7 @@ sqlacodegen==1.1.6
 sqlautocode==0.7
 ssh-import-id==3.21
 uWSGI==2.0.11.2
-urllib3==1.24.2
+urllib3==1.26.5
 visitor==0.1.2
 w3lib==1.13.0
 wheel==0.24.0
