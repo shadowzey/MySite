@@ -12,7 +12,7 @@ MarkupSafe==0.23
 MySQL-python==1.2.5
 SQLAlchemy==1.0.9
 Scrapy==1.0.3
-Twisted==15.5.0
+Twisted==22.1.0
 WTForms==2.0.2
 Werkzeug==0.15.3
 alembic==0.8.4
